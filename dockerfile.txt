@@ -1,9 +1,0 @@
-FROM centos:7
-RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple   \
-    && pip install pip -U \
-    && pip3 install uwsgi \
-    && mkdir /opt/shop \
-WORKDIR /opt/shop
-add smm.tar /opt/shop
-EXPOSE 8000
-ENTRYPOINT	["uwsgi --ini","/opt/smm/shop.ini"]
